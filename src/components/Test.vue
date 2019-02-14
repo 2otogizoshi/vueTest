@@ -4,6 +4,11 @@
     <p>{{ user.firstName }}</p>
     <p v-text="user.firstName"></p>
     <p v-if="showName">{{ user.lastName }}</p>
+    <p v-else="showName">{{ user.firstName }}</p>
+
+    <ul>
+      <li v-for="item in items">{{ item.title }}</li>
+    </ul>
   </div>
 </template>
 
@@ -17,7 +22,12 @@ export default {
         firstName: "scott",
         lastName: "Iam"
       },
-      showName: true
+      showName: true,
+      items: [
+        { title: "Item One" },
+        { title: "Item Two" },
+        { title: "Item Three" }
+      ]
     };
   }
 };
